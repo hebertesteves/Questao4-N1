@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appColorBranco"
+    tools:context=".FormularioPedidoActivity">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/appColorRoxo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/txtTituloPedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="monospace"
+            android:text="@string/appTituloPedido"
+            android:textAlignment="center"
+            android:textColor="@color/appColorBranco"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imgCardapio"
+        android:layout_width="157dp"
+        android:layout_height="256dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frameLayout"
+        app:srcCompat="@drawable/cardapio" />
+
+    <TextView
+        android:id="@+id/tituloNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="monospace"
+        android:text="@string/appTituloNome"
+        android:textColor="@color/appColorPreto"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgCardapio" />
+
+    <EditText
+        android:id="@+id/txtNome"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="@string/appMascaraNome"
+        android:padding="8dp"
+        android:textColor="@color/appColorPreto"
+        android:textColorHint="@color/appColorPreto"
+        app:layout_constraintTop_toBottomOf="@id/tituloNome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/tituloLanche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="monospace"
+        android:text="@string/appTituloLanche"
+        android:textColor="@color/appColorPreto"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtNome" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupPedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tituloLanche">
+
+        <RadioButton
+            android:id="@+id/radioPizza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/appColorRoxo"
+            android:fontFamily="monospace"
+            android:text="@string/radioPizza"
+            android:textAlignment="center"
+            android:textColor="@color/appColorPreto"
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:id="@+id/radioCachorroQuente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/appColorRoxo"
+            android:fontFamily="monospace"
+            android:text="@string/radioCachorroQuente"
+            android:textAlignment="center"
+            android:textColor="@color/appColorPreto"
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:id="@+id/radioBatataFrita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/appColorRoxo"
+            android:fontFamily="monospace"
+            android:text="@string/radioSalgado"
+            android:textAlignment="center"
+            android:textColor="@color/appColorPreto"
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:id="@+id/radioPastel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/appColorRoxo"
+            android:fontFamily="monospace"
+            android:text="@string/radioPastel"
+            android:textAlignment="center"
+            android:textColor="@color/appColorPreto"
+            android:textSize="15sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnPedido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/appColorRoxo"
+        android:fontFamily="monospace"
+        android:onClick="fazerPedido"
+        android:text="@string/btnSolicitar"
+        android:textAlignment="center"
+        android:textColor="@color/appColorBranco"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupPedido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

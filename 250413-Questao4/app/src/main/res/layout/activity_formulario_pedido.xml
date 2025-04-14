@@ -54,20 +54,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgCardapio" />
 
-    <EditText
-        android:id="@+id/txtNome"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/campoLayoutNome"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:hint="@string/appMascaraNome"
-        android:padding="8dp"
-        android:textColor="@color/appColorPreto"
-        android:textColorHint="@color/appColorPreto"
+        app:boxStrokeColor="@color/appColorRoxo"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="@color/appColorPreto"
         app:layout_constraintTop_toBottomOf="@id/tituloNome"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtNome"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="8dp"
+            android:textColor="@color/appColorPreto"
+            android:textColorHint="@color/appColorPreto"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/tituloLanche"
@@ -82,7 +92,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtNome" />
+        app:layout_constraintTop_toBottomOf="@id/campoLayoutNome" />
 
     <RadioGroup
         android:id="@+id/radioGroupPedido"

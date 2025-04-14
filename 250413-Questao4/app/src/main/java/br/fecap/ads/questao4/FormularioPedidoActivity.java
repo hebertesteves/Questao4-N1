@@ -15,10 +15,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
 public class FormularioPedidoActivity extends AppCompatActivity {
 
     // Declaração dos elementos da interface (View)
-    private EditText campoNome;
+    private TextInputLayout campoNomeLayout;
+    private TextInputEditText txtNome;
     private RadioGroup radioGroupPedido;
 
     @Override
@@ -31,22 +35,24 @@ public class FormularioPedidoActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Vinculando os elementos com os Views
+        campoNomeLayout = findViewById(R.id.campoLayoutNome);
+        txtNome = findViewById(R.id.txtNome);
+        radioGroupPedido = findViewById(R.id.radioGroupPedido);
+
     }
 
     // Função para realizar pedido
     public void fazerPedido(View view) {
 
-        // Vinculando os elementos com os Views
-        campoNome = findViewById(R.id.txtNome);
-        radioGroupPedido = findViewById(R.id.radioGroupPedido);
-
         // Armazena o nome digitado do usuario transformando em string
-        String nome = campoNome.getText().toString();
+        String nome = txtNome.getText().toString();
 
         // Verifica se o campo de nome está vazio, caso esteja ele vai usar um return para o usuario não prosseguir sem digitar
         if (nome.isEmpty()) {
-            campoNome.setError("Informe seu nome");
-            campoNome.requestFocus(); // Coloca o foco no campo para o usuário digitar
+            campoNomeLayout.setError("Informe seu nome");
+            txtNome.requestFocus(); // Coloca o foco no campo para o usuário digitar
             return;
         }
 
